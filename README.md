@@ -1,11 +1,10 @@
 # Code of Pytorch
-**NNinnumpy.py**
+## NNinnumpy.py: Numpy
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
 
----
 
-**NNwithTensor.py**
+## NNwithTensor.py: Tensors
 
 与NNinnumpy.py不同点: 将np.array数据结构替换为tensor.
 
@@ -26,8 +25,21 @@
        v = Variable(torch.from_numpy(n))  #ndarray 2 variable
        n = v.numpy() #variable 2 ndarray
 
----
 
 
-**NN**
+## NNwithAutograd： Tensors and autograd
 
+与NNwithTenor.py的不同点：NNwithTensor.py是手动计算神经网络的前后传播，而NNwithAutograd是自动计算。
+
+- Pytorch中的**autograd**包能够提供自主求导的功能（**automatic differentation**）
+
+  - 前向传播定义为计算图(**computational graph**)，图中每个节点为Tensor，每个边为计算操作
+  
+  - 后向传播由autograd自动计算
+  
+- 如何计算某个tensor的梯度：
+
+      x.requires_grad=True 
+      w1 = torch.randn(D_in, H, requires_grad = True)
+      
+- loss.backward():本质是针对一个batch的输入数据来计算各个tensor的梯度
