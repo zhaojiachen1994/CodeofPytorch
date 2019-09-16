@@ -1,5 +1,5 @@
 # Code of Pytorch
-**NNinnumpy.py**
+# NNinnumpy.py
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
 
@@ -29,5 +29,8 @@
 ---
 
 
-**NN**
+**NNwithAutograd**
+与NNwithTenor.py的不同点：NNwithTensor.py是手动计算神经网络的前后传播，而NNwithAutograd是自动计算。
+
+-****
 
