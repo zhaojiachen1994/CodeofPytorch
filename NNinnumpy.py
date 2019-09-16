@@ -4,7 +4,7 @@ File: NNinnumpy.py
 Project: CodeofPytorch
 Author: Jiachen Zhao
 Date: 9/16/19
-Description:
+Description: Referred from https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 """
 
 # -*- coding: utf-8 -*-
@@ -15,18 +15,18 @@ import numpy as np
 N, D_in, H, D_out = 64, 1000, 100, 10
 
 # Create random input and output data using numpy
-x =
-y =
+x = np.random.randn(N, D_in)  #行样本矩阵
+y = np.random.randn(N, D_out)
 
 # Randomly initialize weights
-w1 =
-w2 =
+w1 = np.random.randn(D_in, H)
+w2 = np.random.randn(H, D_out)
 
 learning_rate = 1e-6
 for t in range(500):
     # Forward pass: compute predicted y
     h = x.dot(w1)
-    h_relu = np.maximum(h, 0)
+    h_relu = np.maximum(0,h)
     y_pred = h_relu.dot(w2)
 
     # Compute and print loss
@@ -42,5 +42,5 @@ for t in range(500):
     grad_w1 = x.T.dot(grad_h)
 
     # Update weights
-    w1 -= learning_rate * grad_w1
-    w2 -= learning_rate * grad_w2
+    w1 = w1 - learning_rate * grad_w1
+    w2 = w2 - learning_rate * grad_w2
