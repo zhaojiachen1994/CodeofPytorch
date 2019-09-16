@@ -9,8 +9,9 @@
 
 与NNinnumpy.py不同点: 将np.array数据结构替换为tensor.
 
-- tensor与ndarray的区别：
-
+- Tensor与ndarray的区别：
+  - Tensor支持GPU计算，而array不支持.
+  - Tensors can keep track of a computational graph and gradients.
 
 ---
 
