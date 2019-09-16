@@ -14,8 +14,8 @@
   - Tensors can keep track of a computational graph and gradients.
 - 指定计算设备：
 
-       ‘device = torch.device("cpu")’
-       'device = torch.device("cuda:0")'
+       device = torch.device("cpu")
+       device = torch.device("cuda:0")
 
 ---
 
