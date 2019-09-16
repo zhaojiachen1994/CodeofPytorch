@@ -9,6 +9,8 @@
 
 与NNinnumpy.py不同点: 将np.array数据结构替换为tensor.
 
+1. tensor与ndarray的区别：
+
 
 ---
 
