@@ -16,6 +16,15 @@
 
        device = torch.device("cpu")
        device = torch.device("cuda:0")
+- Variable, tensor, ndarray互相转换
+       
+       t = torch.from_numpy(n)  #ndarray 2 tensor
+       n = t.numpy()  #tensor 2 ndarray
+       
+       v = Variable(t)  #tensor 2 variable
+       
+       v = Variable(torch.from_numpy(n))  #ndarray 2 variable
+       n = v.numpy() #variable 2 ndarray
 
 ---
 
