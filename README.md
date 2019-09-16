@@ -13,7 +13,8 @@
   - Tensor支持GPU计算，而array不支持.
   - Tensors can keep track of a computational graph and gradients.
 - 指定计算设备：
-‘device = torch.device("cpu")’
+
+       ‘device = torch.device("cpu")’
 
 ---
 
