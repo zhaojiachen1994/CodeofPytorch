@@ -7,6 +7,8 @@
 
 **NNwithTensor.py**
 
+不同于NNinnumpy, 
+
 ---
 
 
