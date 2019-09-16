@@ -3,7 +3,6 @@
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
 
----
 
 ## NNwithTensor.py
 
@@ -26,12 +25,10 @@
        v = Variable(torch.from_numpy(n))  #ndarray 2 variable
        n = v.numpy() #variable 2 ndarray
 
----
 
 
 ## NNwithAutograd
 
 与NNwithTenor.py的不同点：NNwithTensor.py是手动计算神经网络的前后传播，而NNwithAutograd是自动计算。
 
----
 
