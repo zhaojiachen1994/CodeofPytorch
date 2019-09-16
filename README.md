@@ -7,7 +7,8 @@
 
 **NNwithTensor.py**
 
-不同于NNinnumpy, 
+与NNinnumpy.py不同点: 将np.array数据结构替换为tensor.
+
 
 ---
 
