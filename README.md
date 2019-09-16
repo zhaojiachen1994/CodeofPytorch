@@ -24,7 +24,7 @@
        v = Variable(t)  #tensor 2 variable
        
        v = Variable(torch.from_numpy(n))  #ndarray 2 variable
-       n = v.numpy() #variable2ndarray
+       n = v.numpy() #variable 2 ndarray
 
 ---
 
