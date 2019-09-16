@@ -30,7 +30,7 @@ for t in range(500):
     y_pred = h_relu.dot(w2)
 
     # Compute and print loss
-    loss = np.square(y_pred - y).sum()
+    loss = np.square(y_pred - y).mean() # Mean squared error
     print(t, loss)
 
     # Backprop to compute gradients of w1 and w2 with respect to loss
