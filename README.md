@@ -48,4 +48,6 @@
 ## NNwithnnmodel: nn
 与NNwithAutograd.py不同点：利用nn package来构造神经网络
 
+- The nn model only defines the structure, input and output, **without** the loss function and optimizer. Loss function and optimizer are both functions.
+
 
