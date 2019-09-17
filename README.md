@@ -27,7 +27,7 @@
 
 
 
-## NNwithAutograd： Tensors and autograd
+## NNwithAutograd.py： Tensors and autograd
 
 与NNwithTenor.py的不同点：NNwithTensor.py是手动计算神经网络的前后传播，而NNwithAutograd是自动计算。
 
@@ -43,3 +43,40 @@
       w1 = torch.randn(D_in, H, requires_grad = True)
       
 - loss.backward():本质是针对一个batch的输入数据来计算各个tensor的梯度
+
+
+## NNwithnnmodel.py: nn module
+与NNwithAutograd.py不同点：NNwithAutograd中的NN是用tensor矩阵计算实现的，NNwithnnmodel是利用nn package来构造神经网络
+
+- The nn model only defines the structure, input and output, **without** the loss function and optimizer. Loss function and optimizer are both functions.
+
+      loss_fn = torch.nn.MSELoss() #loss_fn为nn module 中定义的损失函数类的实体
+      ...
+      loss = loss_fn(y_pred,y)  
+      ...
+      loss.backward()
+
+  - 输入为(y_pred, y_true)，输出loss.item()为loss值，需要在model之外定义
+  - loss为一个tensor,但是loss保留了网络的整个计算图，可以供*.backward()*进行反向传播计算梯度，这也就是tensor flow的概念
+  - loss.backward()可以直接更新在loss的tensor的梯度，但是并没有更新每个tensor的值
+  
+## NNwithoptim.py: torch.optim package
+
+与NNwithnnmodel.py不同点：NNwithAutograd利用手动更新NN的参数的，而NNwithoptim.py利用optimizer来自动更新参数。
+
+      optimizer = torch.optim.SGD(model.parameters(), lr=1e-4)
+      ...
+      optimizer.zero_grad()
+      loss.backward()
+      optimizer.step()
+
+- optimizer根据tensor的值，梯度，历史梯度来更新网络的参数
+  - 定义optimizer的时候需要指定需要**优化器的类型，待优化的参数(tensors)，学习率**
+  - optimizer是针对每个batch的数据进行一次参数更新的，所以在for循环下执行该语句
+  - 在每次循环中需要将optimizer的导数归零，否则会累积
+  - optimizer更新一次参数：optimizer.step()
+  - pytorch 和 keras在语句上一个重要的差别是，pytorch需要自己构造for循环，而keras有参数来指定循环次数。
+  
+  
+  
+
