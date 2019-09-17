@@ -6,9 +6,10 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 ## Outline table
   |              | keep grad  | Backward | Foreward | loss function | update weights | 
-  |:----:        |  :----:    |:----:          |:----:        |:----:    |:----:     |
-  | NNinnumpy.py | X   | manually       | manually     | manually |manually   |
-
+  |:----:        |  :----:    |:----:    |:----:        |:----:    |:----:     |
+  | NNinnumpy.py | X          | X        | X        | X             |   X      |
+  |NNwithTensor.py | tensor   | X        | X        | X             |   X      |
+  |NNwithAutograd.py | tensor   | tensor.backward()   | X        | X             |   X      |
 
 ## NNinnumpy.py: Numpy
 
