@@ -10,7 +10,10 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
   | NNinnumpy.py | X          | X        | X        | X             |   X      |
   |NNwithTensor.py | tensor   | X        | X        | X             |   X      |
   |NNwithAutograd.py | tensor   | tensor.backward()   | X        | X             |   X      |
-
+  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn package  | nn package  |   X      |
+  |NNwithoptim.py | tensor   | tensor.backward()   | nn package  | nn package  |   optim package     |
+  
+  
 ## NNinnumpy.py: Numpy
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
