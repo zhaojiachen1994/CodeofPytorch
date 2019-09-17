@@ -10,8 +10,8 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
   | NNinnumpy.py | X          | X        | X        | X             |   X      |
   |NNwithTensor.py | tensor   | X        | X        | X             |   X      |
   |NNwithAutograd.py | tensor   | tensor.backward()   | X        | X             |   X      |
-  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn package  | nn package  |   X      |
-  |NNwithoptim.py | tensor   | tensor.backward()   | nn package  | nn package  |   optim package     |
+  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn.Sequential | nn.MSELoss()  |   X      |
+  |NNwithoptim.py | tensor   | tensor.backward()   | nn.Sequential | nn.MSELoss()  |   optim.Adam()     |
   
   
 ## NNinnumpy.py: Numpy
