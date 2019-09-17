@@ -76,7 +76,23 @@
   - 在每次循环中需要将optimizer的导数归零，否则会累积
   - optimizer更新一次参数：optimizer.step()
   - pytorch 和 keras在语句上一个重要的差别是，pytorch需要自己构造for循环，而keras有参数来指定循环次数。
-  
-  
+
+## NNwithcustommodel: 
+
+有很多时候我们想要构造特定结构的神经网络，此时我们可以继承**torch.nn.Module**定义自己的nn类：
+
+      class TwoLayerNet(torch.nn.Module):
+        def __init__():
+          # 定义网络的结构，包括那些层，层节点的维数
+        def forward():
+          # 连接输入-层-输出，构造计算图
+
+- 自定义神经网络类需要包括两个函数：**__init__()** 和 **forward()**
+        
+
+## 未完成：
+- PyTorch: Defining new autograd functions
+- TensorFlow: Static Graphs
+- Pytorch: Control Flow + Weight sharing
   
 
