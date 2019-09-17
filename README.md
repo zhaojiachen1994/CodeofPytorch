@@ -20,7 +20,7 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 - 定义输入输出为tensor;
 - 定义网络结构：nn.Sequential() or define custonized class
 - for loop for iterations
-- 计算输出
+  -   计算输出
   -   计算loss
   -   计算梯度
   -   更新参数
