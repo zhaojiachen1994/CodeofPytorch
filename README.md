@@ -52,11 +52,12 @@
 
       loss_fn = torch.nn.MSELoss() #loss_fn为nn module 中定义的损失函数类的实体
       ...
-      loss = loss_fn(y_pred,y)  #loss为tensor,保存了
+      loss = loss_fn(y_pred,y)  
+      ...
+      loss.backward()
 
   - 输入为(y_pred, y_true)，输出loss.item()为loss值，需要在model之外定义
   - loss为一个tensor,但是loss保留了网络的整个计算图，可以供*.backward()*进行反向传播计算梯度，这也就是tensor flow的概念
-  - loss.backward()可以直接更新在loss的tensor的梯度
-
+  - loss.backward()可以直接更新在loss的tensor的梯度，但是并没有更新每个tensor的值
 ## NNwith
 
