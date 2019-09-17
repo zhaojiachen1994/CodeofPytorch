@@ -10,10 +10,21 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
   | NNinnumpy.py | X          | X        | X        | X             |   X      |
   |NNwithTensor.py | tensor   | X        | X        | X             |   X      |
   |NNwithAutograd.py | tensor   | tensor.backward()   | X        | X             |   X      |
-  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn.Sequential | nn.MSELoss()  |   X      |
-  |NNwithoptim.py | tensor   | tensor.backward()   | nn.Sequential | nn.MSELoss()  |   optim.Adam()     |
+  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn.Sequential() | nn.MSELoss()  |   X      |
+  |NNwithoptim.py | tensor   | tensor.backward()   | nn.Sequential() | nn.MSELoss()  |   optim.Adam() |
+  |NNwithcustommodel.py | tensor   | tensor.backward()   | customized class | nn.MSELoss()  |   optim.Adam() |
   
   
+  
+## Steps to build a NN model with pytorch
+1. 定义输入输出为tensor;
+2. 定义网络结构：nn.Sequential() or define custonized class
+3. for loop for iterations
+4.    计算输出
+5.    计算loss
+6.    计算梯度
+7.    更新参数
+
 ## NNinnumpy.py: Numpy
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
