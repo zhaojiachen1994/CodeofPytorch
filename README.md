@@ -50,11 +50,13 @@
 
 - The nn model only defines the structure, input and output, **without** the loss function and optimizer. Loss function and optimizer are both functions.
 
-      *loss_fn = torch.nn.MSELoss()* 可以理解为nn module 中定义的损失函数类的实体
+      loss_fn = torch.nn.MSELoss() #loss_fn为nn module 中定义的损失函数类的实体
+      ...
+      loss = loss_fn(y_pred,y)  #loss为tensor,保存了
 
-  - 输入为(y_pred, y_true)，输出loss.item()为loss值，需要在model之外定义；
-  - y_pred和y_true为tensor,而y_pred也是一个tensor flow的结果，所以保留了网络的计算图，可以供*.backward()*进行反向传播计算梯度。
-  - .backward()是loss_的属性，可以直接
+  - 输入为(y_pred, y_true)，输出loss.item()为loss值，需要在model之外定义
+  - loss为一个tensor,但是loss保留了网络的整个计算图，可以供*.backward()*进行反向传播计算梯度，这也就是tensor flow的概念
+  - loss.backward()可以直接更新在loss的tensor的梯度
 
 ## NNwith
 
