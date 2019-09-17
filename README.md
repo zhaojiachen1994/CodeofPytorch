@@ -50,4 +50,7 @@
 
 - The nn model only defines the structure, input and output, **without** the loss function and optimizer. Loss function and optimizer are both functions.
 
+- loss function 'loss_fn = torch.nn.MSELoss(reduction='sum')' 可以理解为nn module 中定义的损失函数类的实体，函数输入为(y_pred, y_true)，loss.item()为loss值。
+
+## NNwith
 
