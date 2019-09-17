@@ -5,7 +5,7 @@ This tutorial introduces the fundamental concepts of PyTorch through self-contai
 Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 ## Outline table
-  |              | 保存节点梯度 | 反响传播计算梯度 | 前向传播计算图 | loss 定义 | 更新nn参数 | 
+  |              | keep grad  | Backward | Foreward | loss function | update weights | 
   |:----:        |  :----:    |:----:          |:----:        |:----:    |:----:     |
   | NNinnumpy.py | manually   | manually       | manually     | manually |manually   |
 
