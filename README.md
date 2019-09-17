@@ -6,7 +6,7 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 ## Outline table
   | a | n |
-  |：----：|：----：|
+  |:----:|:----:|
   | c | d |
 
 
