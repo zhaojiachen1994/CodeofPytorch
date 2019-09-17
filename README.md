@@ -5,8 +5,8 @@ This tutorial introduces the fundamental concepts of PyTorch through self-contai
 Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 ## Outline table
-|a|n|
-|c|d|
+  |a|n|
+  |c|d|
 
 
 ## NNinnumpy.py: Numpy
