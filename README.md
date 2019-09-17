@@ -43,3 +43,9 @@
       w1 = torch.randn(D_in, H, requires_grad = True)
       
 - loss.backward():本质是针对一个batch的输入数据来计算各个tensor的梯度
+
+
+## NNwithnnmodel: nn
+与NNwithAutograd.py不同点：利用nn package来构造神经网络
+
+
