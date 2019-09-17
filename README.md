@@ -7,7 +7,7 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 ## Outline table
   |              | keep grad  | Backward | Foreward | loss function | update weights | 
   |:----:        |  :----:    |:----:          |:----:        |:----:    |:----:     |
-  | NNinnumpy.py | manually   | manually       | manually     | manually |manually   |
+  | NNinnumpy.py | X   | manually       | manually     | manually |manually   |
 
 
 ## NNinnumpy.py: Numpy
