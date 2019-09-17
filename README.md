@@ -17,13 +17,13 @@ Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
   
   
 ## Steps to build a NN model with pytorch
-1. 定义输入输出为tensor;
-2. 定义网络结构：nn.Sequential() or define custonized class
-3. for loop for iterations
-  4.    计算输出
-  5.    计算loss
-  6.    计算梯度
-  7.    更新参数
+1- 定义输入输出为tensor;
+2- 定义网络结构：nn.Sequential() or define custonized class
+3- for loop for iterations
+  4-    计算输出
+  5-    计算loss
+  6-    计算梯度
+  7-    更新参数
 
 ## NNinnumpy.py: Numpy
 
