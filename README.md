@@ -1,6 +1,8 @@
 # Code of Pytorch
 
-- https://github.com/zhaojiachen1994/CodeofPytorch/edit/master/README.md
+This tutorial introduces the fundamental concepts of PyTorch through self-contained examples.
+
+Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 
 
