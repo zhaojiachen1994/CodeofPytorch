@@ -1,4 +1,30 @@
 # Code of Pytorch
+
+This tutorial introduces the fundamental concepts of PyTorch through self-contained examples.
+
+Reference: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
+
+## Outline table
+  |              | keep grad  | Backward | Foreward | loss function | update weights | 
+  |:----:        |  :----:    |:----:    |:----:        |:----:    |:----:     |
+  | NNinnumpy.py | X          | X        | X        | X             |   X      |
+  |NNwithTensor.py | tensor   | X        | X        | X             |   X      |
+  |NNwithAutograd.py | tensor   | tensor.backward()   | X        | X             |   X      |
+  |NNwithnnmodel.py | tensor   | tensor.backward()   | nn.Sequential() | nn.MSELoss()  |   X      |
+  |NNwithoptim.py | tensor   | tensor.backward()   | nn.Sequential() | nn.MSELoss()  |   optim.Adam() |
+  |NNwithcustommodel.py | tensor   | tensor.backward()   | customized class | nn.MSELoss()  |   optim.Adam() |
+  
+  
+  
+## Steps to build a NN model with pytorch
+- 定义输入输出为tensor;
+- 定义网络结构：nn.Sequential() or define custonized class
+- for loop for iterations
+  -   计算输出
+  -   计算loss
+  -   计算梯度
+  -   更新参数
+
 ## NNinnumpy.py: Numpy
 
 利用Numpy实现一个两层神经网络，网络结构为 "linear-Relu-linear-mean squared error".
@@ -10,7 +36,7 @@
 
 - Tensor与ndarray的区别：
   - Tensor支持GPU计算，而array不支持.
-  - Tensors can keep track of a computational graph and gradients.
+  - ***Tensors can keep track of a computational graph and gradients.***
 - 指定计算设备：
 
        device = torch.device("cpu")
