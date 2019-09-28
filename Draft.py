@@ -188,7 +188,7 @@ solver.draw_model()
 # 如何设置dataloader的dtype
 # customized loss function
 # 利用solver来包装整个程序.优点是什么？, 完成
-# 在tensorboard中可视化网络
+# 在tensorboard中可视化网络,完成
 
 
 
