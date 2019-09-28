@@ -24,24 +24,7 @@ from sklearn.svm import SVC
 import torch
 from torch.autograd import Variable
 from torch import nn
-
-# step0: generate the classification task using sklearn, num_classes=2
-# X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1,n_samples=1000)
-# rng = np.random.RandomState(2)
-# X += 0*rng.uniform(size=X.shape)
-# X = StandardScaler().fit_transform(X)
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
-# print(np.unique(y_train))
-# num_train = X_train.shape[0]
-# num_dim = X_train.shape[1]
-# num_test = X_test.shape[0]
-# svm = SVC(gamma=2, C=1)
-# svm.fit(X_train, y_train)
-# score = svm.score(X_test, y_test)
-# print('svm accuracy:', score)
-# sio.savemat('./Data/training.mat',{'X': X_train, 'y': y_train})
-# sio.savemat('./Data/testing.mat',{'X': X_test, 'y': y_test})
-
+from tensorboardX import SummaryWriter
 
 
 class MatDataset(torch.utils.data.Dataset):
@@ -115,12 +98,25 @@ class Solver(object):
 
     # build the model
     def build_model(self, verbose=False):
+
         self.model = Model(self.latent_dim)
         if verbose==True:
             print(model)
         self.cost = torch.nn.CrossEntropyLoss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=config.lr)
         # return model, cost, optimizer
+
+
+    def draw_model(self):
+        # how to download and build the tensorboard environment:
+        # git clone https: // github.com / lanpa / tensorboardX & & cd tensorboardX & & python setup.py install
+        logpath = 'log'
+        dummy_input = torch.rand(10,2)# 假设输入10个3维样本
+        with SummaryWriter(comment='draftNN') as w:
+            w.add_graph(self.model, (dummy_input,))
+        print('Draw the model structure in tensor board...')
+        print('Tips: type the following code in Terminal of Pycharm (PATH is the path of runs in Project window.):\n'
+              'tensorboard --logdir= PATH')
 
     # training
     def train(self):
@@ -154,13 +150,6 @@ class Solver(object):
                 testing_correct += torch.sum(pred == y_test_epoch.data)
             print("Test Accuracy is:{:.2f}%".format(100*testing_correct/self.num_test))
 
-
-
-
-
-
-
-
 if __name__ == "__main__":
     print('--------')
 
@@ -179,7 +168,8 @@ config = parser.parse_args()
 
 
 solver =Solver(vars(config))
-solver.train()
+solver.draw_model()
+# solver.train()
 
 
 # Extended content
@@ -192,12 +182,14 @@ solver.train()
 # 利用编译器来设置参数, 完成
 # 保留每个阶段的模型
 # 保存和加载模型
-# 画训练函数曲线
+# 保存训练过程的损失函数，画训练函数曲线
 # 4. dataset 类的transform
 # 将历史数据保存到logger
 # 如何设置dataloader的dtype
 # customized loss function
 # 利用solver来包装整个程序.优点是什么？, 完成
+# 在tensorboard中可视化网络
+
 
 
 
